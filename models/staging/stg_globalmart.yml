@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: stg_orders
+    description: One Unique Order per Row
+    columns:
+      - name: orderid
+        description: The Primary Key for stg_orders
+      - name: shipmode
+        description: '{{doc("shipmode")}}'
