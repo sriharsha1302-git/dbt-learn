@@ -6,7 +6,17 @@ sources:
     schema: globalmart
     tables:
       - name: customer
+        columns:
+          - name: customerid
+            tests:
+              - unique
+              - not_null
       - name: orders
+        columns:
+          - name: orderid
+            tests:
+              - unique
+              - not_null
       - name: product
 #Code to Check Freshness of Source Data and Throw Errors/Warnings according to settings      
 #          columns:
