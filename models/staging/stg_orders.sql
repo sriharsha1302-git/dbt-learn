@@ -1,3 +1,9 @@
+{{
+    config(
+        materialized='table'
+    )
+}}
+
 SELECT 
 -- from raw_orders
 Ordr.orderid,
@@ -8,11 +14,13 @@ Ordr.ordercostprice,
 Ordr.ordersellingprice,
 (Ordr.ordersellingprice - Ordr.ordercostprice) as orderprofit,
 --from raw_customer
+Cust.customerid,
 Cust.customername,
 Cust.segment,
 Cust.country,
 --from raw_product
 Prod.category,
+Prod.productid,
 Prod.productname,
 Prod.subcategory
 FROM
